@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-hello',
@@ -9,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class HelloComponent implements OnInit {
   title:string;
   message:string;
-  text1:string;
 
   constructor() {}
 
   ngOnInit() {
     this.title = 'Hello-app';
     this.message = 'ngModelを使う';
-    this.text1 = '';
+  }
+
+  onSubmit(val){
+   this.message = JSON.stringify(val);
   }
 }
